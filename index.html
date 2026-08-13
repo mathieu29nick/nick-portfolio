@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio de Nick Mathieu Rakotomanana, Développeur FullStack JavaScript spécialisé en React, Next.js, Node.js et NestJS." />
+  <meta name="theme-color" content="#0b1020" />
+  <title>Nick Mathieu Rakotomanana — Développeur FullStack</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="page-noise" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="Retour en haut">
+      <span class="brand-mark">NR</span>
+      <span class="brand-name">Nick Rakotomanana</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Navigation principale">
+      <a href="#about">À propos</a>
+      <a href="#experience">Parcours</a>
+      <a href="#projects">Projets</a>
+      <a href="#skills">Compétences</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-button" id="themeToggle" type="button" aria-label="Changer le thème" title="Changer le thème">
+        <span class="theme-icon" aria-hidden="true">◐</span>
+      </button>
+      <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span>
+        <span class="sr-only">Menu</span>
+      </button>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Navigation mobile">
+      <a href="#about">À propos</a>
+      <a href="#experience">Parcours</a>
+      <a href="#projects">Projets</a>
+      <a href="#skills">Compétences</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-shell">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span class="status-dot"></span> Disponible pour de nouvelles collaborations</div>
+        <h1>Je transforme des idées en <span class="gradient-text">produits web fiables</span>.</h1>
+        <p class="hero-role"><span id="typedRole">Développeur FullStack JavaScript</span><span class="typing-cursor">|</span></p>
+        <p class="hero-intro">
+          Développeur FullStack avec une expérience sur des produits web en France, en Irlande, à Maurice et à Madagascar. Je travaille principalement avec React, Next.js, Node.js, NestJS, GraphQL et des bases SQL / NoSQL.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">Voir mes projets <span>↗</span></a>
+          <a class="button ghost" href="CV_Nick_Rakotomanana.pdf" download>Télécharger mon CV <span>↓</span></a>
+        </div>
+        <div class="hero-meta">
+          <div><strong>2021</strong><span>Début du parcours pro</span></div>
+          <div><strong>6</strong><span>projets / produits présentés</span></div>
+          <div><strong>FullStack</strong><span>front, back, API & data</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" data-delay="120">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="profile-card tilt-card">
+          <div class="profile-topline">
+            <span>PORTFOLIO / 2026</span>
+            <span class="live-pill">● LIVE</span>
+          </div>
+          <img src="assets/protait.png" alt="Illustration abstraite d'une interface de développement web" />
+          <div class="profile-card-bottom">
+            <div>
+              <span class="micro-label">FOCUS</span>
+              <strong>Node · React · Next.js · NestJS · SQL/NoSQL</strong>
+            </div>
+            <div class="profile-avatar">NR</div>
+          </div>
+        </div>
+        <div class="floating-chip chip-a">FullStack</div>
+        <div class="floating-chip chip-b">Frontend</div>
+        <div class="floating-chip chip-c">Backend</div>
+      </div>
+    </section>
+
+    <section class="marquee-wrap" aria-label="Technologies principales">
+      <div class="marquee-track">
+        <span>React</span><i>✦</i><span>Next.js</span><i>✦</i><span>Node.js</span><i>✦</i><span>NestJS</span><i>✦</i><span>GraphQL</span><i>✦</i><span>PostgreSQL</span><i>✦</i><span>MongoDB</span><i>✦</i><span>Docker</span><i>✦</i>
+        <span aria-hidden="true">React</span><i aria-hidden="true">✦</i><span aria-hidden="true">Next.js</span><i aria-hidden="true">✦</i><span aria-hidden="true">Node.js</span><i aria-hidden="true">✦</i><span aria-hidden="true">NestJS</span><i aria-hidden="true">✦</i><span aria-hidden="true">GraphQL</span><i aria-hidden="true">✦</i><span aria-hidden="true">PostgreSQL</span><i aria-hidden="true">✦</i><span aria-hidden="true">MongoDB</span><i aria-hidden="true">✦</i><span aria-hidden="true">Docker</span><i aria-hidden="true">✦</i>
+      </div>
+    </section>
+
+    <section class="section-shell content-section" id="about">
+      <div class="section-heading reveal">
+        <span class="section-kicker">01 / PROFIL</span>
+        <h2>Un profil orienté <span class="gradient-text">produit et résolution de problèmes</span>.</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <p>
+            J'interviens sur l'ensemble du cycle de développement : conception, intégration front-end, API, logique métier, base de données, tests et mise en production. Mon parcours m'a amené à travailler sur des plateformes de CV, des sites internationaux, des systèmes de facturation et des applications métier.
+          </p>
+          <p>
+            J'apprécie particulièrement les environnements où il faut comprendre un besoin métier, fiabiliser l'existant et livrer des fonctionnalités concrètes avec une architecture maintenable.
+          </p>
+        </div>
+        <div class="about-panel reveal" data-delay="90">
+          <div class="mini-stat"><span>Localisation</span><strong>Madagascar</strong></div>
+          <div class="mini-stat"><span>Spécialité</span><strong>FullStack JavaScript/TypeScript</strong></div>
+          <div class="mini-stat"><span>Méthode</span><strong>Agile/Scrum</strong></div>
+          <div class="mini-stat"><span>Langues</span><strong>FR · EN · MG</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell content-section" id="experience">
+      <div class="section-heading reveal">
+        <span class="section-kicker">02 / PARCOURS</span>
+        <h2>Expériences professionnelles</h2>
+        <p>Une progression du développement applicatif vers des produits FullStack plus complets.</p>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-period">Depuis fév. 2026</div>
+          <div class="timeline-card">
+            <div class="timeline-card-head">
+              <div><span class="company">TX-Studio · France</span><h3>Développeur FullStack JS/TS — Freelance</h3></div>
+              <span class="tag">Actuel</span>
+            </div>
+            <p>Gestion et évolution d'un site destiné à des adhérents en France.</p>
+            <ul>
+              <li>Correction de bugs majeurs et fiabilisation de l'application</li>
+              <li>Modules de notifications, restauration, facturation, avoirs et remboursements</li>
+              <li>Journal de caisse, journal d'audit, paiement et tests unitaires</li>
+              <li>Mise en production</li>
+            </ul>
+            <div class="tech-row"><span>Frontend</span><span>Backend</span><span>Next.js</span><span>NestJS</span><span>Docker</span><span>MongoDB</span><span>JEST</span><span>Docker</span><span>GitLab</span></div>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-period">2025 — 2026</div>
+          <div class="timeline-card">
+            <div class="timeline-card-head"><div><span class="company">Mada Ponton · Great Ponton · Madagascar / Irlande</span><h3>Développeur FullStack JS</h3></div></div>
+            <p>Contribution à ResumeDone et à une extension navigateur destinée à l'accompagnement des candidats en recherche d'emploi.</p>
+            <ul>
+              <li>Activation du mode RTL pour des CV et lettres de motivation</li>
+              <li>Nouveau template, mises en production et tests unitaires</li>
+              <li>Développement d'une extension en Vanilla JS / Node.js</li>
+            </ul>
+            <div class="tech-row"><span>Frontend</span><span>Backend</span><span>Next.js</span><span>NestJS</span><span>GraphQL</span><span>Zustand/Redux</span><span>Vanilla JS</span><span>Jest</span><span>GitHub</span></div>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-period">2023 — 2025</div>
+          <div class="timeline-card">
+            <div class="timeline-card-head"><div><span class="company">Proximity BBDO Indian Ocean · Maurice</span><h3>Développeur Frontend</h3></div></div>
+            <p>Travail sur le site Pampers et déploiement d'outils digitaux sur plusieurs marchés internationaux.</p>
+            <ul>
+              <li>Activation et amélioration d'outils de suivi de grossesse</li>
+              <li>Mise en production de fonctionnalités validées par les clients</li>
+              <li>Migration de la gestion des utilisateurs de Janrain vers Okta</li>
+            </ul>
+            <div class="tech-row"><span>Frontend</span><span>React</span><span>Next.js</span><span>GraphQL</span><span>Contentful</span><span>Azure DevOps</span><span>CI/CD</span></div>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-period">2022 — 2024</div>
+          <div class="timeline-card">
+            <div class="timeline-card-head"><div><span class="company">BICI · Madagascar</span><h3>Développeur FullStack</h3></div></div>
+            <p>Développement de produits web, notamment JeJoo et Vidy Varotra.</p>
+            <ul>
+              <li>Front-end, APIs, intégration et gestion d'annonces</li>
+              <li>Gestion utilisateurs et conception fonctionnelle</li>
+              <li>Paiements en ligne Mvola et Orange Money</li>
+            </ul>
+            <div class="tech-row"><span>Frontend</span><span>Backend</span><span>Next.js</span><span>React</span><span>React Native</span><span>Node.js</span><span>PostgreSQL/MongoDB</span><span>Figma</span></div>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-period">2021 — 2022</div>
+          <div class="timeline-card">
+            <div class="timeline-card-head"><div><span class="company">DCE · Madagascar</span><h3>Développeur FullStack JS/TS</h3></div></div>
+            <p>Développement d'OPTime, une application d'aide à la décision autour des investissements publics.</p>
+            <ul>
+              <li>Gestion des utilisateurs et importation de données</li>
+              <li>Création d'APIs REST et traitements métiers</li>
+              <li>Export de résultats, documentation et accompagnement utilisateurs</li>
+            </ul>
+            <div class="tech-row"><span>Frontend</span><span>Backend</span><span>React</span><span>Next.js</span><span>NestJS</span><span>Node.js</span><span>PostgreSQL</span><span>Heroku</span><span>Jest</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell content-section" id="projects">
+      <div class="section-heading reveal">
+        <span class="section-kicker">03 / PROJETS</span>
+        <h2>Une sélection de projets</h2>
+        <p>Des produits métier, grand public et internationaux.</p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card project-featured reveal">
+          <div class="project-image"><img src="assets/ccc.png" alt="Illustration d'une plateforme de gestion d'adhérents" /></div>
+          <div class="project-body">
+            <div class="project-meta"><span>01</span><span>FullStack · 2026</span></div>
+            <h3>Plateforme de gestion d'adhérents</h3>
+            <p>Évolution d'une application avec facturation, paiements, remboursements, notifications et journaux de suivi.</p>
+            <div class="tech-row"><span>Next.js</span><span>NestJS</span><span>MongoDB</span><span>Docker</span></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-delay="60">
+          <div class="project-image"><img src="assets/resume.png" alt="Illustration d'un éditeur de CV" /></div>
+          <div class="project-body">
+            <div class="project-meta"><span>02</span><span>SaaS</span></div>
+            <h3>ResumeDone</h3>
+            <p>Éditeur de CV et lettres de motivation avec templates, support RTL et mises en production régulières.</p>
+            <div class="tech-row"><span>Next.js</span><span>NestJS</span><span>Vanilla JS</span><span>GraphQL</span></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-delay="100">
+          <div class="project-image"><img src="assets/pampers.png" alt="Illustration d'un produit web international" /></div>
+          <div class="project-body">
+            <div class="project-meta"><span>03</span><span>International</span></div>
+            <h3>Pampers</h3>
+            <p>Activation et amélioration d'outils sur plusieurs pays, release client et migration Janrain vers Okta.</p>
+            <div class="tech-row"><span>React</span><span>Next.js</span><span>GraphQL</span><span>Contentful</span></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-image"><img src="assets/vv.png" alt="Illustration d'une marketplace" /></div>
+          <div class="project-body">
+            <div class="project-meta"><span>04</span><span>Marketplace</span></div>
+            <h3>Vidy Varotra</h3>
+            <p>Plateforme de petites annonces avec gestion des utilisateurs, annonces et paiements Mvola / Orange Money.</p>
+            <div class="tech-row"><span>React</span><span>NodeJS</span><span>PostgreSQL</span><span>API</span></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-delay="60">
+          <div class="project-image"><img src="assets/jj.png" alt="Illustration d'un média web" /></div>
+          <div class="project-body">
+            <div class="project-meta"><span>05</span><span>Media / Directory</span></div>
+            <h3>JeJoo</h3>
+            <p>Front-end, APIs d'annonces et d'annuaires, puis intégration des services sur la plateforme.</p>
+            <div class="tech-row"><span>Next.js</span><span>PostgreSQL</span><span>Java</span></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-delay="100">
+          <div class="project-image"><img src="assets/opt.png" alt="Illustration d'une application de data et d'investissement" /></div>
+          <div class="project-body">
+            <div class="project-meta"><span>06</span><span>Data / Public</span></div>
+            <h3>OPTime</h3>
+            <p>Application d'aide à la décision pour exploiter et restituer des données sur les investissements publics.</p>
+            <div class="tech-row"><span>React</span><span>Node.js</span><span>PostgreSQL</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell content-section" id="skills">
+      <div class="section-heading reveal">
+        <span class="section-kicker">04 / COMPÉTENCES</span>
+        <h2>Stack technique</h2>
+      </div>
+      <div class="skills-layout">
+        <div class="skill-main reveal">
+          <div class="skill-category">
+            <div class="skill-title"><span>01</span><h3>Front-end</h3></div>
+            <div class="skill-cloud"><span>React.js</span><span>Next.js</span><span>JavaScript</span><span>HTML</span><span>Figma</span></div>
+          </div>
+          <div class="skill-category">
+            <div class="skill-title"><span>02</span><h3>Back-end</h3></div>
+            <div class="skill-cloud"><span>Node.js</span><span>NestJS</span><span>Express</span><span>GraphQL</span><span>REST API</span></div>
+          </div>
+          <div class="skill-category">
+            <div class="skill-title"><span>03</span><h3>Data & outils</h3></div>
+            <div class="skill-cloud"><span>PostgreSQL</span><span>MongoDB</span><span>MySQL</span><span>SQL Server</span><span>Docker</span><span>Postman</span><span>GitHub</span><span>GitLab</span><span>Linux</span></div>
+          </div>
+        </div>
+        <aside class="skill-side reveal" data-delay="100">
+          <div class="code-window">
+            <div class="code-window-top"><i></i><i></i><i></i><span>profile.ts</span></div>
+            <pre><code><span class="c-purple">const</span> developer = {
+  name: <span class="c-green">"Nick Mathieu"</span>,
+  role: <span class="c-green">"FullStack JS/TS"</span>,
+  approach: [
+    <span class="c-green">"Clean code"</span>,
+    <span class="c-green">"Business logic"</span>,
+    <span class="c-green">"Reliable delivery"</span>
+  ],
+  status: <span class="c-blue">"building"</span>
+};</code></pre>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section-shell content-section" id="education">
+      <div class="section-heading reveal">
+        <span class="section-kicker">05 / FORMATION</span>
+        <h2>Diplômes & formation</h2>
+      </div>
+      <div class="education-grid">
+        <article class="education-card reveal">
+          <span class="edu-year">2023 — 2024</span>
+          <h3>Master 2 — MBDS</h3>
+          <p>IT University Andoharanofotsy · Université Côte d'Azur</p>
+        </article>
+        <article class="education-card reveal" data-delay="60">
+          <span class="edu-year">2021 — 2022</span>
+          <h3>Licence en développement informatique</h3>
+          <p>IT University Andoharanofotsy · Madagascar</p>
+        </article>
+        <article class="education-card reveal" data-delay="120">
+          <span class="edu-year">2019 — 2020</span>
+          <h3>DELF B2</h3>
+          <p>Alliance Française Andavamamba</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-shell contact-section" id="contact">
+      <div class="contact-card reveal">
+        <div class="contact-orb"></div>
+        <span class="section-kicker">06 / CONTACT</span>
+        <h2>Un projet, une mission ou une opportunité à discuter ?</h2>
+        <p>Je suis ouvert aux collaborations FullStack, aux missions React / Next.js / Node.js et aux produits qui demandent autant de rigueur technique que de compréhension métier.</p>
+        <div class="contact-actions">
+          <a class="button light" href="mailto:rakotomanananick29@gmail.com">rakotomanananick29@gmail.com <span>↗</span></a>
+          <a class="button outline-light" href="tel:+261341781333">+261 34 17 813 33</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer section-shell">
+    <div><strong>Nick Mathieu Rakotomanana</strong><span>Développeur FullStack</span></div>
+    <p>Portfolio conçu pour présenter mon parcours, mes compétences et mes projets.</p>
+    <a href="#top">Retour en haut ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
