@@ -8,6 +8,82 @@
   <title>Nick Mathieu Rakotomanana — Développeur FullStack</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    .language-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: .3rem;
+      padding: .35rem .55rem;
+      border: 1px solid color-mix(in srgb, currentColor 16%, transparent);
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--surface, #11182b) 82%, transparent);
+      backdrop-filter: blur(12px);
+    }
+    .language-button {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      cursor: pointer;
+      opacity: .48;
+      padding: .1rem .18rem;
+      transition: opacity .2s ease, transform .2s ease;
+    }
+    .language-button:hover { opacity: .82; transform: translateY(-1px); }
+    .language-button.is-active { opacity: 1; }
+    .language-separator { opacity: .25; font-size: .72rem; }
+
+    .cv-download { position: relative; }
+    .cv-download > summary { list-style: none; cursor: pointer; user-select: none; }
+    .cv-download > summary::-webkit-details-marker { display: none; }
+    .cv-download-menu {
+      position: absolute;
+      z-index: 50;
+      top: calc(100% + .65rem);
+      right: 0;
+      min-width: 220px;
+      padding: .45rem;
+      border: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+      border-radius: 16px;
+      background: var(--surface, #11182b);
+      box-shadow: 0 18px 50px rgba(0,0,0,.22);
+      backdrop-filter: blur(18px);
+    }
+    .cv-download-menu a {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      padding: .75rem .8rem;
+      border-radius: 11px;
+      color: inherit;
+      text-decoration: none;
+      transition: background .2s ease, transform .2s ease;
+    }
+    .cv-download-menu a:hover {
+      background: color-mix(in srgb, currentColor 8%, transparent);
+      transform: translateX(2px);
+    }
+    .cv-language {
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 26px;
+      border-radius: 8px;
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+      border: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+    }
+    @media (max-width: 720px) {
+      .language-switcher { padding: .28rem .44rem; }
+      .cv-download-menu { left: 0; right: auto; min-width: 205px; }
+    }
+  </style>
 </head>
 <body>
   <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
@@ -29,6 +105,11 @@
     </nav>
 
     <div class="header-actions">
+      <div class="language-switcher" role="group" aria-label="Choisir la langue">
+        <button class="language-button is-active" type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <span class="language-separator" aria-hidden="true">/</span>
+        <button class="language-button" type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
       <button class="icon-button" id="themeToggle" type="button" aria-label="Changer le thème" title="Changer le thème">
         <span class="theme-icon" aria-hidden="true">◐</span>
       </button>
@@ -58,7 +139,19 @@
         </p>
         <div class="hero-actions">
           <a class="button primary" href="#projects">Voir mes projets <span>↗</span></a>
-          <a class="button ghost" href="CV_Nick_Rakotomanana.pdf" download>Télécharger mon CV <span>↓</span></a>
+          <details class="cv-download">
+            <summary class="button ghost"><span class="cv-summary-label">Télécharger mon CV</span> <span>↓</span></summary>
+            <div class="cv-download-menu">
+              <a href="CV_FR_RAKOTOMANANA_Nick_Mathieu_Andrianina.pdf" download>
+                <span class="cv-language">FR</span>
+                <span class="cv-label-fr">CV Français</span>
+              </a>
+              <a href="CV_EN_RAKOTOMANANA_Nick_Mathieu_Andrianina.pdf" download>
+                <span class="cv-language">EN</span>
+                <span class="cv-label-en">CV Anglais</span>
+              </a>
+            </div>
+          </details>
         </div>
         <div class="hero-meta">
           <div><strong>2021</strong><span>Début du parcours pro</span></div>
@@ -362,5 +455,181 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <script>
+    (() => {
+      const translations = {
+        "Retour en haut": "Back to top",
+        "Navigation principale": "Main navigation",
+        "Navigation mobile": "Mobile navigation",
+        "Changer le thème": "Change theme",
+        "Choisir la langue": "Choose language",
+        "À propos": "About",
+        "Parcours": "Experience",
+        "Projets": "Projects",
+        "Compétences": "Skills",
+        "Disponible pour de nouvelles collaborations": "Available for new collaborations",
+        "Je transforme des idées en": "I turn ideas into",
+        "produits web fiables": "reliable web products",
+        "Développeur FullStack JavaScript": "Full Stack JavaScript Developer",
+        "Développeur FullStack avec une expérience sur des produits web en France, en Irlande, à Maurice et à Madagascar. Je travaille principalement avec React, Next.js, Node.js, NestJS, GraphQL et des bases SQL / NoSQL.": "Full Stack Developer with experience building web products for teams in France, Ireland, Mauritius and Madagascar. I mainly work with React, Next.js, Node.js, NestJS, GraphQL, and SQL / NoSQL databases.",
+        "Voir mes projets": "View my projects",
+        "Télécharger mon CV": "Download my CV",
+        "CV Français": "French CV",
+        "CV Anglais": "English CV",
+        "Début du parcours pro": "Professional journey started",
+        "projets / produits présentés": "projects / products showcased",
+        "front, back, API & data": "front end, back end, APIs & data",
+        "Technologies principales": "Core technologies",
+        "01 / PROFIL": "01 / PROFILE",
+        "Un profil orienté": "A profile focused on",
+        "produit et résolution de problèmes": "product thinking and problem-solving",
+        "J'interviens sur l'ensemble du cycle de développement : conception, intégration front-end, API, logique métier, base de données, tests et mise en production. Mon parcours m'a amené à travailler sur des plateformes de CV, des sites internationaux, des systèmes de facturation et des applications métier.": "I work across the full development lifecycle: design, front-end integration, APIs, business logic, databases, testing and production deployment. My experience includes CV platforms, international websites, billing systems and business applications.",
+        "J'apprécie particulièrement les environnements où il faut comprendre un besoin métier, fiabiliser l'existant et livrer des fonctionnalités concrètes avec une architecture maintenable.": "I especially enjoy environments where understanding business needs, improving existing systems and delivering concrete features with maintainable architecture all matter.",
+        "Localisation": "Location",
+        "Spécialité": "Specialty",
+        "Méthode": "Methodology",
+        "Langues": "Languages",
+        "02 / PARCOURS": "02 / EXPERIENCE",
+        "Expériences professionnelles": "Professional experience",
+        "Une progression du développement applicatif vers des produits FullStack plus complets.": "A progression from application development to more complete Full Stack products.",
+        "Depuis fév. 2026": "Since Feb. 2026",
+        "Développeur FullStack JS/TS — Freelance": "Full Stack JS/TS Developer — Freelance",
+        "Actuel": "Current",
+        "Gestion et évolution d'un site destiné à des adhérents en France.": "Maintenance and continued development of a web platform for members in France.",
+        "Correction de bugs majeurs et fiabilisation de l'application": "Fixed major bugs and improved application reliability",
+        "Modules de notifications, restauration, facturation, avoirs et remboursements": "Built notification, food service, invoicing, credit note and refund modules",
+        "Journal de caisse, journal d'audit, paiement et tests unitaires": "Implemented cash register logs, audit logs, payments and unit tests",
+        "Mise en production": "Production deployment",
+        "Mada Ponton · Great Ponton · Madagascar / Irlande": "Mada Ponton · Great Ponton · Madagascar / Ireland",
+        "Développeur FullStack JS": "Full Stack JS Developer",
+        "Contribution à ResumeDone et à une extension navigateur destinée à l'accompagnement des candidats en recherche d'emploi.": "Contributed to ResumeDone and a browser extension designed to support job seekers.",
+        "Activation du mode RTL pour des CV et lettres de motivation": "Enabled RTL mode for CVs and cover letters",
+        "Nouveau template, mises en production et tests unitaires": "Built a new template, handled production releases and implemented unit tests",
+        "Développement d'une extension en Vanilla JS / Node.js": "Developed a browser extension with Vanilla JS / Node.js",
+        "Proximity BBDO Indian Ocean · Maurice": "Proximity BBDO Indian Ocean · Mauritius",
+        "Développeur Frontend": "Frontend Developer",
+        "Travail sur le site Pampers et déploiement d'outils digitaux sur plusieurs marchés internationaux.": "Worked on the Pampers website and deployed digital tools across multiple international markets.",
+        "Activation et amélioration d'outils de suivi de grossesse": "Enabled and enhanced pregnancy tracking tools",
+        "Mise en production de fonctionnalités validées par les clients": "Deployed client-approved features to production",
+        "Migration de la gestion des utilisateurs de Janrain vers Okta": "Migrated user management from Janrain to Okta",
+        "Développeur FullStack": "Full Stack Developer",
+        "Développement de produits web, notamment JeJoo et Vidy Varotra.": "Developed web products including JeJoo and Vidy Varotra.",
+        "Front-end, APIs, intégration et gestion d'annonces": "Front-end development, APIs, integration and classified ad management",
+        "Gestion utilisateurs et conception fonctionnelle": "User management and functional design",
+        "Paiements en ligne Mvola et Orange Money": "Online payments with Mvola and Orange Money",
+        "Développement d'OPTime, une application d'aide à la décision autour des investissements publics.": "Developed OPTime, a decision-support application for public investment data.",
+        "Gestion des utilisateurs et importation de données": "User management and data import",
+        "Création d'APIs REST et traitements métiers": "Built REST APIs and business logic",
+        "Export de résultats, documentation et accompagnement utilisateurs": "Results export, documentation and user support",
+        "03 / PROJETS": "03 / PROJECTS",
+        "Une sélection de projets": "Selected projects",
+        "Des produits métier, grand public et internationaux.": "Business, consumer and international products.",
+        "Plateforme de gestion d'adhérents": "Member management platform",
+        "Évolution d'une application avec facturation, paiements, remboursements, notifications et journaux de suivi.": "Enhanced an application with invoicing, payments, refunds, notifications and tracking logs.",
+        "Éditeur de CV et lettres de motivation avec templates, support RTL et mises en production régulières.": "CV and cover-letter editor with templates, RTL support and regular production releases.",
+        "Activation et amélioration d'outils sur plusieurs pays, release client et migration Janrain vers Okta.": "Enabled and improved tools across multiple countries, handled client releases and migrated Janrain to Okta.",
+        "Plateforme de petites annonces avec gestion des utilisateurs, annonces et paiements Mvola / Orange Money.": "Classified ads platform with user management, listings and Mvola / Orange Money payments.",
+        "Front-end, APIs d'annonces et d'annuaires, puis intégration des services sur la plateforme.": "Front-end development, listing and directory APIs, followed by service integration into the platform.",
+        "Application d'aide à la décision pour exploiter et restituer des données sur les investissements publics.": "Decision-support application for processing and presenting public investment data.",
+        "04 / COMPÉTENCES": "04 / SKILLS",
+        "Stack technique": "Technical stack",
+        "Data & outils": "Data & tools",
+        "05 / FORMATION": "05 / EDUCATION",
+        "Diplômes & formation": "Education & certifications",
+        "Licence en développement informatique": "Bachelor's Degree in Software Development",
+        "06 / CONTACT": "06 / CONTACT",
+        "Un projet, une mission ou une opportunité à discuter ?": "Have a project, freelance mission or opportunity to discuss?",
+        "Je suis ouvert aux collaborations FullStack, aux missions React / Next.js / Node.js et aux produits qui demandent autant de rigueur technique que de compréhension métier.": "I'm open to Full Stack collaborations, React / Next.js / Node.js opportunities, and products that require both strong engineering discipline and a solid understanding of business needs.",
+        "Portfolio conçu pour présenter mon parcours, mes compétences et mes projets.": "Portfolio designed to showcase my experience, skills and projects.",
+        "Illustration abstraite d'une interface de développement web": "Abstract illustration of a web development interface",
+        "Illustration d'une plateforme de gestion d'adhérents": "Illustration of a member management platform",
+        "Illustration d'un éditeur de CV": "Illustration of a CV editor",
+        "Illustration d'un produit web international": "Illustration of an international web product",
+        "Illustration d'une marketplace": "Illustration of a marketplace",
+        "Illustration d'un média web": "Illustration of a web media platform",
+        "Illustration d'une application de data et d'investissement": "Illustration of a data and investment application"
+      };
+
+      const pageMeta = {
+        fr: {
+          title: "Nick Mathieu Rakotomanana — Développeur FullStack",
+          description: "Portfolio de Nick Mathieu Rakotomanana, Développeur FullStack JavaScript spécialisé en React, Next.js, Node.js et NestJS."
+        },
+        en: {
+          title: "Nick Mathieu Rakotomanana — Full Stack Developer",
+          description: "Portfolio of Nick Mathieu Rakotomanana, a Full Stack JavaScript Developer specializing in React, Next.js, Node.js and NestJS."
+        }
+      };
+
+      const textNodes = [];
+      const attributeNodes = [];
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+        acceptNode(node) {
+          if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+          if (node.parentElement && ['SCRIPT', 'STYLE', 'CODE', 'PRE'].includes(node.parentElement.tagName)) return NodeFilter.FILTER_REJECT;
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      });
+
+      while (walker.nextNode()) {
+        const node = walker.currentNode;
+        const original = node.nodeValue.trim();
+        if (translations[original]) textNodes.push({ node, fr: original, en: translations[original] });
+      }
+
+      document.querySelectorAll('[aria-label], [title], [alt]').forEach(el => {
+        ['aria-label', 'title', 'alt'].forEach(attr => {
+          if (!el.hasAttribute(attr)) return;
+          const original = el.getAttribute(attr);
+          if (translations[original]) attributeNodes.push({ el, attr, fr: original, en: translations[original] });
+        });
+      });
+
+      const setLanguage = (lang) => {
+        const safeLang = lang === 'en' ? 'en' : 'fr';
+        document.documentElement.lang = safeLang;
+        document.title = pageMeta[safeLang].title;
+        const meta = document.querySelector('meta[name="description"]');
+        if (meta) meta.setAttribute('content', pageMeta[safeLang].description);
+
+        textNodes.forEach(({ node, fr, en }) => {
+          const before = node.nodeValue.match(/^\s*/)?.[0] ?? '';
+          const after = node.nodeValue.match(/\s*$/)?.[0] ?? '';
+          node.nodeValue = before + (safeLang === 'en' ? en : fr) + after;
+        });
+        attributeNodes.forEach(({ el, attr, fr, en }) => el.setAttribute(attr, safeLang === 'en' ? en : fr));
+
+        document.querySelectorAll('.language-button').forEach(btn => {
+          const active = btn.dataset.lang === safeLang;
+          btn.classList.toggle('is-active', active);
+          btn.setAttribute('aria-pressed', String(active));
+        });
+
+        const cvSummary = document.querySelector('.cv-summary-label');
+        if (cvSummary) cvSummary.textContent = safeLang === 'en' ? 'Download my CV' : 'Télécharger mon CV';
+        const cvFr = document.querySelector('.cv-label-fr');
+        const cvEn = document.querySelector('.cv-label-en');
+        if (cvFr) cvFr.textContent = safeLang === 'en' ? 'French CV' : 'CV Français';
+        if (cvEn) cvEn.textContent = safeLang === 'en' ? 'English CV' : 'CV Anglais';
+
+        localStorage.setItem('portfolio-language', safeLang);
+      };
+
+      document.querySelectorAll('.language-button').forEach(btn => {
+        btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+      });
+
+      document.addEventListener('click', (event) => {
+        document.querySelectorAll('.cv-download[open]').forEach(menu => {
+          if (!menu.contains(event.target)) menu.removeAttribute('open');
+        });
+      });
+
+      const saved = localStorage.getItem('portfolio-language');
+      const preferred = saved || (navigator.language && navigator.language.toLowerCase().startsWith('en') ? 'en' : 'fr');
+      setLanguage(preferred);
+    })();
+  </script>
 </body>
 </html>
